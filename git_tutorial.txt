@@ -1,0 +1,72 @@
+Setting up your repo locally:
+	1. Install git on your computer. If you have a mac, it is installed with XCode
+		a. for windows just use the default installation settings, they are fine for 99% of use cases
+
+	2. You'll need to create a Personal Access Token on Github in order to push changes
+		a. At the bottom of settings click the developer settings.
+		b. Click Generate new token on the top right. 
+			i. I just gave myself all permissions, am not 100% sure what we need for this right now. I know you 			won't need to delete the repo or manage any enterprise stuff so don't worry about those.
+			ii. NOTE: You only have access to this once you click generate, make sure to copy to a text file or leave it up until you've logged in.
+	3. Set your global name and username
+		a. git --global user.name "first_name last_name"
+		b. git --global user.email "email@domain"
+	4. Login to Github, enter below into whatever command line tool you use:
+		a. gh auth login
+			i. select HTTPS
+			ii. when asked to authenticate to Git with GitHub credentials, enter Y
+			iii. enter your email and the previously generated token, not your password
+	4. Clone repo: 
+		a. mac: navigate to folder via terminal until pwd is the folder you want to clone to
+			i. windows: right click and hit git bash here if using git bash, if installed cmd line tools same as above with cmd line
+		a. git clone https://github.com/epuls/212_sort_algo
+	5. Now you can checkout, make changes, add, and commit. Useful commands at the bottom of this file.
+
+
+===========================================================================================
+
+GENERAL FLOW USING GIT:
+
+- make your own branch off of the main(also referred to as master but they've changed default to main)
+- use the below commands to checkout a new branch
+- make your changes and additions
+- git add to stage additions/modifications/deletions
+- git commit to commit your changes to your current branch
+- git push -u to push to the remote repo
+- when ready to merge to main, checkout main. Make sure you've committed your changes.
+- git merge [branch_to_merge]
+
+
+NOTES:
+
+- If you ever need to revert to whatever branch you were working off of just use git checkout [branch_name] and you'll get the latest commit for that branch.
+- git add . is usually the safest way to add new files and changes, unless you're specifically intending to delete files from the branch which is always risky in a team setting
+- git has a billion commands that do similar things, be careful when punching in commands you aren't familiar with
+
+===========================================================================================
+
+
+Git Commands:
+
+
+git add . 
+	- stages new files/mods WITHOUT DELETIONS
+git add -u
+	- stages mods/deletions WITHOUT NEW FILES
+git add -A
+	- stages ALL CHANGES
+
+
+git commit -m “MESSAGE HERE DESCRIBING CHANGES”
+
+
+git checkout -b [branch_name]
+	- create and switch to branch_name. can also do:
+		git branch [branch_name]
+		git checkout [branch_name]
+	- to switch back to main:
+		git checkout main
+
+git clone [repo_address]
+	clone repo at specified http(s) address
+
+
