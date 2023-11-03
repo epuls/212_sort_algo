@@ -29,13 +29,16 @@ GENERAL FLOW USING GIT:
 - git add to stage additions/modifications/deletions
 - git commit to commit your changes to your current branch
 - git push -u to push to the remote repo
-- when ready to merge to main, checkout main. Make sure you've committed your changes.
-- git merge [branch_to_merge]
+- when ready to merge to main, create a pull request in github
+- when pull request is accepted, git checkout main and git pull.
 
 
 NOTES:
 
-- If you ever need to revert to whatever branch you were working off of just use git checkout [branch_name] and you'll get the latest commit for that branch.
+- You can think of there always being two instances of your version control, local and remote. Your remote version is github--anything committed locally is not on the remote until you push it.
+	a. This is important because when we merge and perform actions on github, you will need to pull those changes back down.
+	b. Its also worth noting your local branches wont necessarily match your remote ones if you don't stay on top of them. If you delete a remote branch, make sure you delete your local branch too. 
+- If you ever need to revert to whatever branch you were working off of just use git checkout [branch_name] and you'll get the latest commit for that local branch.
 - git add . is usually the safest way to add new files and changes, unless you're specifically intending to delete files from the branch which is always risky in a team setting
 - git has a billion commands that do similar things, be careful when punching in commands you aren't familiar with
 
