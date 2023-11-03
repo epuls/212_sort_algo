@@ -5,22 +5,18 @@ Setting up your repo locally:
 	2. You'll need to create a Personal Access Token on Github in order to push changes
 		a. At the bottom of settings click the developer settings.
 		b. Click Generate new token on the top right. 
-			i. I just gave myself all permissions, am not 100% sure what we need for this right now. I know you 			won't need to delete the repo or manage any enterprise stuff so don't worry about those.
+			i. I just gave myself all permissions, am not 100% sure what we need for this right now. I know you won't need to delete the repo or manage any enterprise stuff so don't worry about those.
 			ii. NOTE: You only have access to this once you click generate, make sure to copy to a text file or leave it up until you've logged in.
 	3. Set your global name and username
 		a. git config --global user.name "first_name last_name"
 		b. git config --global user.email "email@domain"
-	4. Login to Github, enter below into whatever command line tool you use:
-		a. gh auth login
-			i. select HTTPS
-			ii. when asked to authenticate to Git with GitHub credentials, enter Y
-			iii. enter your email and the previously generated token, not your password
-		b. if this doesn't work clone and login on your first commmit
-	4. Clone repo: 
+	
+	3. Clone repo: 
 		a. mac: navigate to folder via terminal until pwd is the folder you want to clone to
 			i. windows: right click and hit git bash here if using git bash, if installed cmd line tools same as above with cmd line
 		a. git clone https://github.com/epuls/212_sort_algo
-	5. Now you can checkout, make changes, add, and commit. Useful commands at the bottom of this file.
+	4. Now you can checkout, make changes, add, and commit. Useful commands at the bottom of this file.
+		a. Note: when you make your first push to remote, that is when you will log in to github. Have your token at hand.
 
 
 ===========================================================================================
@@ -69,5 +65,11 @@ git checkout -b [branch_name]
 
 git clone [repo_address]
 	clone repo at specified http(s) address
+
+git pull
+	- Pull latest committed changes from remote
+
+
+https://www.freecodecamp.org/news/git-delete-branch-how-to-remove-a-local-or-remote-branch/
 
 
