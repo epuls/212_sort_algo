@@ -15,6 +15,7 @@ Setting up your repo locally:
 			i. select HTTPS
 			ii. when asked to authenticate to Git with GitHub credentials, enter Y
 			iii. enter your email and the previously generated token, not your password
+		b. if this doesn't work clone and login on your first commmit
 	4. Clone repo: 
 		a. mac: navigate to folder via terminal until pwd is the folder you want to clone to
 			i. windows: right click and hit git bash here if using git bash, if installed cmd line tools same as above with cmd line
