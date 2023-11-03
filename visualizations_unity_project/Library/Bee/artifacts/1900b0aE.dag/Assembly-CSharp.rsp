@@ -366,6 +366,7 @@
 "Assets/Scripts/Insertion_Sort.cs"
 "Assets/Scripts/ISortingAlgorithm.cs"
 "Assets/Scripts/SetupVis.cs"
+"Assets/Scripts/UIManager.cs"
 -langversion:9.0
 
 /deterministic

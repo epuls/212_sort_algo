@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\SetupVis.cs" />
      <Compile Include="Assets\Scripts\Insertion_Sort.cs" />
      <Compile Include="Assets\Scripts\ISortingAlgorithm.cs" />
+     <Compile Include="Assets\Scripts\UIManager.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\Settings" />
