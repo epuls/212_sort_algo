@@ -8,8 +8,8 @@ Setting up your repo locally:
 			i. I just gave myself all permissions, am not 100% sure what we need for this right now. I know you 			won't need to delete the repo or manage any enterprise stuff so don't worry about those.
 			ii. NOTE: You only have access to this once you click generate, make sure to copy to a text file or leave it up until you've logged in.
 	3. Set your global name and username
-		a. git --global user.name "first_name last_name"
-		b. git --global user.email "email@domain"
+		a. git config --global user.name "first_name last_name"
+		b. git config --global user.email "email@domain"
 	4. Login to Github, enter below into whatever command line tool you use:
 		a. gh auth login
 			i. select HTTPS
