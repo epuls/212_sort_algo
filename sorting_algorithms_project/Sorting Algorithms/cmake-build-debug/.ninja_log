@@ -1,0 +1,5 @@
+# ninja log v5
+697	852	7207220865242344	Tree_Sort.exe	263ccfa4a3b6f7a
+2	1079	7211144600326148	CMakeFiles/Sorting_Algorithms.dir/main.cpp.obj	dc91d032153515b3
+11	1090	7211144600491995	CMakeFiles/Sorting_Algorithms.dir/tree_sort.cpp.obj	be12b494f6166b7b
+1090	1492	7211144604517026	Sorting_Algorithms.exe	46b345f627cf763f

@@ -1,0 +1,3 @@
+D:/Documents/CLionProjects/Assignments/CSC 212 Project/Sorting Algorithms/cmake-build-debug/CMakeFiles/Sorting_Algorithms.dir
+D:/Documents/CLionProjects/Assignments/CSC 212 Project/Sorting Algorithms/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Documents/CLionProjects/Assignments/CSC 212 Project/Sorting Algorithms/cmake-build-debug/CMakeFiles/rebuild_cache.dir
