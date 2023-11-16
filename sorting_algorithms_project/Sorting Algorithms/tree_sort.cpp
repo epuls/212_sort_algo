@@ -4,6 +4,7 @@
 
 #include "tree_sort.h"
 
+
 Node::Node(int d) {
     data = d;
     left = nullptr;
@@ -30,11 +31,11 @@ void TreeSort::destroy(Node *n) {
     delete n;
 }
 
-void TreeSort::inorder(Node *n, int arr[], int &i) {
+void TreeSort::inorder(Node *n, std::vector<int> &vec, int &i) {
     if(n) {
-        inorder(n->left, arr, i);
-        arr[i++] = n->data;
-        inorder(n->right, arr, i);
+        inorder(n->left, vec, i);
+        vec[i++] = n->data;
+        inorder(n->right, vec, i);
     }
 }
 
@@ -51,13 +52,13 @@ Node* TreeSort::insert(Node *n, int key) {
     return n;
 }
 
-void TreeSort::sort(int *arr, int n) {
-    root = insert(root, arr[0]);
+void TreeSort::sort(std::vector<int>& vec) {
+    root = insert(root, vec[0]);
 
-    for(int i = 1; i < n; i++) {
-        root = insert(root, arr[i]);
+    for(int i = 1; i < vec.size(); i++) {
+        root = insert(root, vec[i]);
     }
 
     int i = 0;
-    inorder(root, arr, i);
+    inorder(root, vec, i);
 }
