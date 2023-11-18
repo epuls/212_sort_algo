@@ -6,6 +6,8 @@
 #define TREE_SORT_TREE_SORT_H
 
 #include <iostream>
+#include <vector>
+
 class Node{
 private:
     int data;
@@ -22,7 +24,7 @@ public:
 class TreeSort {
 private:
     Node* root;
-    void inorder(Node* n, int arr[], int &i);
+    void inorder(Node* n, std::vector<int> &vec, int &i);
     Node* insert(Node* n, int key);
     void destroy(Node* n);
 
@@ -30,7 +32,7 @@ private:
 public:
     TreeSort();
     ~TreeSort();
-    void sort(int arr[], int n);
+    void sort(std::vector<int>& vec);
 };
 
 

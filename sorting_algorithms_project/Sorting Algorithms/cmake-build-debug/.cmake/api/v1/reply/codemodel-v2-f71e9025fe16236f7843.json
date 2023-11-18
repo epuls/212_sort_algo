@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Documents/CLionProjects/Assignments/CSC 212 Project/Sorting Algorithms/cmake-build-debug",
-		"source" : "D:/Documents/CLionProjects/Assignments/CSC 212 Project/Sorting Algorithms"
+		"build" : "C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug",
+		"source" : "C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms"
 	},
 	"version" : 
 	{
