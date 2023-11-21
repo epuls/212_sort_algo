@@ -1,20 +1,13 @@
-#include <iostream>
-#include "tree_sort.h"
-void insertionSort(std::vector<int>& data)
-{
-    int i, key, j;
-    int n = data.size();
-    for (i = 1; i < n; i++) {
-        key = data[i];
-        j = i - 1;
 
-        while (j >= 0 && data[j] > key) {
-            data[j + 1] = data[j];
-            j = j - 1;
-        }
-        data[j + 1] = key;
-    }
-}
+#include <iostream>
+#include <fstream>
+#include <sstream>
+
+#include "tree_sort.h"
+#include "Sorting.h"
+#include "Sorting.cpp" //i might be dumb but not sure why i am getting an error without this.
+
+
 
 void print(std::vector<int> &vec){
     for(int i = 0; i < vec.size(); i++) {
@@ -23,15 +16,43 @@ void print(std::vector<int> &vec){
     std::cout << std::endl;
 }
 
-int main() {
+//3 args: filename, clock speed(0 or 1), sort type (0 for insertion, 1 for merge, 2 for quick, 3 for tree
+int main(int argc, char *argv[]) {
+
+    //args
+    std::ifstream ifs(argv[1]);
+    bool measureClock = std::stoi(argv[2]);
+    int sortType = std::stoi(argv[3]);
+
+    //data
+    std::vector<int> inputData;
+
+    //parsing
+    std::string line;
+    std::getline(ifs, line);
+    std::stringstream ss(line);
+
+    int tmp;
+    while(ss >> tmp){
+        inputData.push_back(tmp);
+    }
+
+    print(inputData);
+
+
+    //create Sorting object
+    Sorting sortObj(inputData, sortType);
+
+    sortObj.Sort(measureClock);
+    print(sortObj.Data);
+
+
+    /*
     std::vector<int> vec = {7,67,68,84,94};
     TreeSort T;
-<<<<<<< HEAD
     std::cout << "Unsorted: ";
-=======
     T.sort(vec);
-    insertionSort(vec);
->>>>>>> main
+    Sorting::InsertionSort(vec);
     print(vec);
     std::cout << std::endl;
 
@@ -40,10 +61,11 @@ int main() {
         print(vec);
         std::cout << "Sorted with Tree Sort\n";
     } else {
-        insertionSort(vec);
+        Sorting::InsertionSort(vec);
         print(vec);
         std::cout << "Sorted with Insertion Sort\n";
     }
+     */
 
 }
 

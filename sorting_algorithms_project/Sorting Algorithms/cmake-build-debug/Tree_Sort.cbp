@@ -8,90 +8,96 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug"/>
+				<Option working_dir="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Sorting_Algorithms">
-				<Option output="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Sorting_Algorithms.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug"/>
+				<Option output="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Sorting_Algorithms.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 Sorting_Algorithms"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 Sorting_Algorithms"/>
+					<CompileFile command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Sorting_Algorithms/fast">
-				<Option output="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Sorting_Algorithms.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug"/>
+				<Option output="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Sorting_Algorithms.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 Sorting_Algorithms/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 Sorting_Algorithms/fast"/>
+					<CompileFile command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug"/>
+				<Option working_dir="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug"/>
+				<Option working_dir="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/mingw/bin/mingw32-make.exe -f &quot;C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/main.cpp">
+		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/main.cpp">
 			<Option target="Sorting_Algorithms"/>
 		</Unit>
-		<Unit filename="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/tree_sort.cpp">
+		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/sorting.cpp">
 			<Option target="Sorting_Algorithms"/>
 		</Unit>
-		<Unit filename="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/tree_sort.h">
+		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/sorting.h">
 			<Option target="Sorting_Algorithms"/>
 		</Unit>
-		<Unit filename="C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/CMakeLists.txt">
+		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/tree_sort.cpp">
+			<Option target="Sorting_Algorithms"/>
+		</Unit>
+		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/tree_sort.h">
+			<Option target="Sorting_Algorithms"/>
+		</Unit>
+		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
