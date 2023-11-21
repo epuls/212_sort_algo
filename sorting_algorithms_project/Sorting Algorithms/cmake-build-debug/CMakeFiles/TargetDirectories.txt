@@ -1,3 +1,0 @@
-C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/CMakeFiles/Sorting_Algorithms.dir
-C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/CMakeFiles/rebuild_cache.dir

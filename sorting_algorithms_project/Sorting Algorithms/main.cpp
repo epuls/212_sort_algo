@@ -26,7 +26,12 @@ void print(std::vector<int> &vec){
 int main() {
     std::vector<int> vec = {7,67,68,84,94};
     TreeSort T;
+<<<<<<< HEAD
     std::cout << "Unsorted: ";
+=======
+    T.sort(vec);
+    insertionSort(vec);
+>>>>>>> main
     print(vec);
     std::cout << std::endl;
 
