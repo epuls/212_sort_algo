@@ -11,6 +11,6 @@
 -- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (3.7s)
+-- Configuring done (3.1s)
 -- Generating done (0.0s)
 -- Build files have been written to: C:/Users/asalm/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug
