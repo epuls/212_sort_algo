@@ -107,7 +107,7 @@ public class SetupVis : MonoBehaviour
     
     void Start()
     {
-        _insertionSortRef = this.GetComponent<Insertion_Sort>();
+        _insertionSortRef = this.GetComponent<InsertionSort>();
         PopulateElements(_insertionSortRef, arrayToSort);
         _currArrayLength = arrayToSort.Length;
     }
