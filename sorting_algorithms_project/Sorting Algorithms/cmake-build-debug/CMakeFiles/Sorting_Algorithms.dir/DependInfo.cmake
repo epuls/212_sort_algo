@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/Sorting.cpp" "CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj" "gcc" "CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj.d"
   "C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/main.cpp" "CMakeFiles/Sorting_Algorithms.dir/main.cpp.obj" "gcc" "CMakeFiles/Sorting_Algorithms.dir/main.cpp.obj.d"
-  "C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/sorting.cpp" "CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj" "gcc" "CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj.d"
   "C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/tree_sort.cpp" "CMakeFiles/Sorting_Algorithms.dir/tree_sort.cpp.obj" "gcc" "CMakeFiles/Sorting_Algorithms.dir/tree_sort.cpp.obj.d"
   )
 

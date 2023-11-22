@@ -128,6 +128,30 @@ Sorting_Algorithms/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sorting_Algorithms.dir\build.make CMakeFiles/Sorting_Algorithms.dir/build
 .PHONY : Sorting_Algorithms/fast
 
+Sorting.obj: Sorting.cpp.obj
+.PHONY : Sorting.obj
+
+# target to build an object file
+Sorting.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sorting_Algorithms.dir\build.make CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj
+.PHONY : Sorting.cpp.obj
+
+Sorting.i: Sorting.cpp.i
+.PHONY : Sorting.i
+
+# target to preprocess a source file
+Sorting.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sorting_Algorithms.dir\build.make CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.i
+.PHONY : Sorting.cpp.i
+
+Sorting.s: Sorting.cpp.s
+.PHONY : Sorting.s
+
+# target to generate assembly for a file
+Sorting.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sorting_Algorithms.dir\build.make CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.s
+.PHONY : Sorting.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -151,30 +175,6 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sorting_Algorithms.dir\build.make CMakeFiles/Sorting_Algorithms.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-sorting.obj: sorting.cpp.obj
-.PHONY : sorting.obj
-
-# target to build an object file
-sorting.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sorting_Algorithms.dir\build.make CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj
-.PHONY : sorting.cpp.obj
-
-sorting.i: sorting.cpp.i
-.PHONY : sorting.i
-
-# target to preprocess a source file
-sorting.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sorting_Algorithms.dir\build.make CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.i
-.PHONY : sorting.cpp.i
-
-sorting.s: sorting.cpp.s
-.PHONY : sorting.s
-
-# target to generate assembly for a file
-sorting.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sorting_Algorithms.dir\build.make CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.s
-.PHONY : sorting.cpp.s
 
 tree_sort.obj: tree_sort.cpp.obj
 .PHONY : tree_sort.obj
@@ -209,12 +209,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Sorting_Algorithms
+	@echo ... Sorting.obj
+	@echo ... Sorting.i
+	@echo ... Sorting.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... sorting.obj
-	@echo ... sorting.i
-	@echo ... sorting.s
 	@echo ... tree_sort.obj
 	@echo ... tree_sort.i
 	@echo ... tree_sort.s

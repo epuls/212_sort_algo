@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj"
+  "CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj.d"
   "CMakeFiles/Sorting_Algorithms.dir/main.cpp.obj"
   "CMakeFiles/Sorting_Algorithms.dir/main.cpp.obj.d"
-  "CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj"
-  "CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj.d"
   "CMakeFiles/Sorting_Algorithms.dir/tree_sort.cpp.obj"
   "CMakeFiles/Sorting_Algorithms.dir/tree_sort.cpp.obj.d"
   "Sorting_Algorithms.exe"

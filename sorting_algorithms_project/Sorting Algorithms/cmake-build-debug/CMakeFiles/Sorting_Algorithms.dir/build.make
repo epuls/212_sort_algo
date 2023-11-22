@@ -96,32 +96,32 @@ CMakeFiles/Sorting_Algorithms.dir/tree_sort.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Sorting_Algorithms.dir/tree_sort.cpp.s"
 	C:\Users\epuls\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\232.9921.42\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms\tree_sort.cpp" -o CMakeFiles\Sorting_Algorithms.dir\tree_sort.cpp.s
 
-CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj: CMakeFiles/Sorting_Algorithms.dir/flags.make
-CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj: C:/212_sort_algo/sorting_algorithms_project/Sorting\ Algorithms/sorting.cpp
-CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj: CMakeFiles/Sorting_Algorithms.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj"
-	C:\Users\epuls\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\232.9921.42\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj -MF CMakeFiles\Sorting_Algorithms.dir\sorting.cpp.obj.d -o CMakeFiles\Sorting_Algorithms.dir\sorting.cpp.obj -c "C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms\sorting.cpp"
+CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj: CMakeFiles/Sorting_Algorithms.dir/flags.make
+CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj: C:/212_sort_algo/sorting_algorithms_project/Sorting\ Algorithms/Sorting.cpp
+CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj: CMakeFiles/Sorting_Algorithms.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj"
+	C:\Users\epuls\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\232.9921.42\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj -MF CMakeFiles\Sorting_Algorithms.dir\Sorting.cpp.obj.d -o CMakeFiles\Sorting_Algorithms.dir\Sorting.cpp.obj -c "C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms\Sorting.cpp"
 
-CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.i"
-	C:\Users\epuls\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\232.9921.42\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms\sorting.cpp" > CMakeFiles\Sorting_Algorithms.dir\sorting.cpp.i
+CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.i"
+	C:\Users\epuls\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\232.9921.42\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms\Sorting.cpp" > CMakeFiles\Sorting_Algorithms.dir\Sorting.cpp.i
 
-CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.s"
-	C:\Users\epuls\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\232.9921.42\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms\sorting.cpp" -o CMakeFiles\Sorting_Algorithms.dir\sorting.cpp.s
+CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.s"
+	C:\Users\epuls\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\232.9921.42\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms\Sorting.cpp" -o CMakeFiles\Sorting_Algorithms.dir\Sorting.cpp.s
 
 # Object files for target Sorting_Algorithms
 Sorting_Algorithms_OBJECTS = \
 "CMakeFiles/Sorting_Algorithms.dir/main.cpp.obj" \
 "CMakeFiles/Sorting_Algorithms.dir/tree_sort.cpp.obj" \
-"CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj"
+"CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj"
 
 # External object files for target Sorting_Algorithms
 Sorting_Algorithms_EXTERNAL_OBJECTS =
 
 Sorting_Algorithms.exe: CMakeFiles/Sorting_Algorithms.dir/main.cpp.obj
 Sorting_Algorithms.exe: CMakeFiles/Sorting_Algorithms.dir/tree_sort.cpp.obj
-Sorting_Algorithms.exe: CMakeFiles/Sorting_Algorithms.dir/sorting.cpp.obj
+Sorting_Algorithms.exe: CMakeFiles/Sorting_Algorithms.dir/Sorting.cpp.obj
 Sorting_Algorithms.exe: CMakeFiles/Sorting_Algorithms.dir/build.make
 Sorting_Algorithms.exe: CMakeFiles/Sorting_Algorithms.dir/linkLibs.rsp
 Sorting_Algorithms.exe: CMakeFiles/Sorting_Algorithms.dir/objects1.rsp

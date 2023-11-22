@@ -1,11 +1,16 @@
-#ifndef TREE_SORT_SORTING_H
-#define TREE_SORT_SORTING_H
+#ifndef SORTING_H
+#define SORTING_H
+
 #include <iostream>
 #include <vector>
 //runtime clocking
 #include <ctime>
 #include <cstdint>
 #include <iomanip>
+
+#include "tree_sort.h"
+
+
 
 class Sorting {
 public:
@@ -22,13 +27,12 @@ public:
     static void InsertionSort(std::vector<int>& data);
     static void MergeSort(std::vector<int>& data);
     static void QuickSort(std::vector<int>& data);
+    static void TreeSort(std::vector<int>& data);
 
 private:
     void pickSort(std::vector<int>& data); //define how to pick sort, private helper called from AutoSort
     void measureTiming(SortingType sortingType); //call sorts from this func to measure timing
-     //not yet implemented. do we want to cache the data here and clean up our main?
     SortingType _sortingType;
 };
 
-
-#endif //TREE_SORT_SORTING_H
+#endif //SORTING_H

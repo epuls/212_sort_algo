@@ -1,26 +1,42 @@
 #include "Sorting.h"
+#include "tree_sort.h"
+#include "tree_sort.cpp"
+
 
 //constructors/destructors
 Sorting::Sorting(std::vector<int> sortData, int mode) {
     Data = sortData;
-    //set Sorting type
+
+    //throw error if mode argument is out of bounds
+    if(mode < 0 | mode > 4){
+        std::cerr << "undefined sorting mode";
+        std::exit(-1);
+    }
+
+    //set sorting type (4 is the auto sort)
     if(mode == 4)
         pickSort(sortData);
     else
         _sortingType = static_cast<SortingType>(mode); //this casts the input arg to our enum
 }
 
-Sorting::~Sorting() {
-
-}
+Sorting::~Sorting() = default;
 
 //---------------------------------------------private functions-------------------------------------------------------
+//the auto sort function that picks sorting type by vector size
+//TODO: flesh out after analysing sort times
 void Sorting::pickSort(std::vector<int> &data) {
-    //arbitrarily setting Sorting type to insertion until this is built
-    _sortingType = INSERTION;
+    //following same logic as before for testing purposes
+    int size = data.size();
+    if(size <= 5)
+        _sortingType = INSERTION;
+    else if (size <= 25)
+        _sortingType = TREE;
+    else
+        _sortingType = INSERTION;
 }
 
-//modified implementation from lab 02
+// TODO modify to write to .csv file here I think -ethen
 void Sorting::measureTiming(SortingType sortingType) {
     uint64_t val;
 
@@ -45,13 +61,13 @@ void Sorting::measureTiming(SortingType sortingType) {
             break;
         case(TREE):
             c_start = std::clock();
-            //not yet implemented
+            TreeSort(Data);
             c_end = std::clock();
             break;
     }
 
     float output = 1.0 * (c_end - c_start) / CLOCKS_PER_SEC;
-    //will need to figure out how we want to output our timing values
+    //will need to figure out how we want to output our timing values. Will probably need to write to file so we can plot
     std::cout << std::fixed << std::setprecision(4) << output << " Output: " << val << std::endl;
 }
 
@@ -73,14 +89,20 @@ void Sorting::InsertionSort(std::vector<int>& data)
 }
 
 void Sorting::MergeSort(std::vector<int>& data) {
-
+//TODO: put merge sort code here
 }
 
 void Sorting::QuickSort(std::vector<int> &data) {
-
+//TODO: put quick sort code here
 }
 
-//either call the sort that measures timing or call the sorting functions themselves
+void Sorting::TreeSort(std::vector<int>& data){
+    //need to use class keyword here due to scoping...TreeSort is the name of a public func and a class.
+    class TreeSort T;
+    T.sort(data);
+}
+
+//Main sorting function. Either calls the measureTiming function to sort and record time, or calls the sorting functions directly
 void Sorting::Sort(bool measureClock) {
     if(measureClock)
         measureTiming(_sortingType);
@@ -96,21 +118,8 @@ void Sorting::Sort(bool measureClock) {
                 QuickSort(Data);
                 break;
             case(TREE):
-                //yes
+                TreeSort(Data);
                 break;
         }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -82,13 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/Sorting.cpp">
+			<Option target="Sorting_Algorithms"/>
+		</Unit>
+		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/Sorting.h">
+			<Option target="Sorting_Algorithms"/>
+		</Unit>
 		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/main.cpp">
-			<Option target="Sorting_Algorithms"/>
-		</Unit>
-		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/sorting.cpp">
-			<Option target="Sorting_Algorithms"/>
-		</Unit>
-		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/sorting.h">
 			<Option target="Sorting_Algorithms"/>
 		</Unit>
 		<Unit filename="C:/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/tree_sort.cpp">

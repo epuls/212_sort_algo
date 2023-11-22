@@ -127,12 +127,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "sorting.cpp",
+			"path" : "Sorting.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "sorting.h",
+			"path" : "Sorting.h",
 			"sourceGroupIndex" : 1
 		}
 	],
