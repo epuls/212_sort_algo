@@ -32,7 +32,12 @@ public:
 private:
     void pickSort(std::vector<int>& data); //define how to pick sort, private helper called from AutoSort
     void measureTiming(SortingType sortingType); //call sorts from this func to measure timing
+
     SortingType _sortingType;
+
+    //merge sort helpers
+    static void mergeem(int L, int M, int R, std::vector<int>& array1);
+    static void mergesort(int L, int R, std::vector<int>& array1);
 };
 
 #endif //SORTING_H

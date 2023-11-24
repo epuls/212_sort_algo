@@ -71,6 +71,45 @@ void Sorting::measureTiming(SortingType sortingType) {
     std::cout << std::fixed << std::setprecision(4) << output << " Output: " << val << std::endl;
 }
 
+void Sorting::mergeem(int L, int M, int R, std::vector<int> &array1) {
+    //vector<int>
+    int a1= M-L+1;
+    int a2= R-M;
+    //int a=0,b=,c=L;
+    std::vector<int> left(a1); //temp array 1
+    std::vector<int> right(a2);//temp array 2
+    for(int i=0;i<a1;i++){
+        left[i]=array1[L+i];
+    }for(int j=0;j<a2;j++){
+        right[j]=array1[M+1+j];
+    }
+    int a=0,b=0,c=L;// put temp array back to original array
+    for(;a<a1 && b<a2;c++){
+        if(left[a]<=right[b]){
+            array1[c]=left[a];
+            a++;
+        }else{
+            array1[c]=right[b];
+            b++;
+        }
+    }
+    for(;a<a1;a++,c++){// copies remaining ints from left and right
+        array1[c]=left[a];
+        //c++;
+    }for(;b<a2;b++,c++){
+        array1[c]=right[b];
+    }
+}
+
+void Sorting::mergesort(int L, int R, std::vector<int> &array1) {
+    if(L<R){
+        int M=L+(R-L)/2;
+        mergesort(L,M,array1);
+        mergesort(M+1,R,array1);
+        mergeem(L,M,R,array1);
+    }
+}
+
 //---------------------------------------------public functions--------------------------------------------------------
 void Sorting::InsertionSort(std::vector<int>& data)
 {
@@ -89,7 +128,7 @@ void Sorting::InsertionSort(std::vector<int>& data)
 }
 
 void Sorting::MergeSort(std::vector<int>& data) {
-//TODO: put merge sort code here
+    mergesort(0, data.size()-1, data);
 }
 
 void Sorting::QuickSort(std::vector<int> &data) {
@@ -123,3 +162,5 @@ void Sorting::Sort(bool measureClock) {
         }
     }
 }
+
+

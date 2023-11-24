@@ -25,7 +25,7 @@ void print(std::vector<int> &vec){
 //3 args: filename, measure timing(0 or 1), sort type (0 for insertion, 1 for merge, 2 for quick, 3 for tree, 4 for auto)
 int main(int argc, char *argv[]) {
     //args
-    std::ifstream ifs(argv[1]); 
+    std::ifstream ifs(argv[1]);
     bool measureClock = std::stoi(argv[2]);
     int sortType = std::stoi(argv[3]);
 
