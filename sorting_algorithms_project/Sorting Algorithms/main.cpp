@@ -1,49 +1,57 @@
 #include <iostream>
-#include "tree_sort.h"
-void insertionSort(std::vector<int>& data)
-{
-    int i, key, j;
-    int n = data.size();
-    for (i = 1; i < n; i++) {
-        key = data[i];
-        j = i - 1;
+#include <fstream>
+#include <sstream>
 
-        while (j >= 0 && data[j] > key) {
-            data[j + 1] = data[j];
-            j = j - 1;
-        }
-        data[j + 1] = key;
-    }
-}
+#include "tree_sort.h"
+#include "Sorting.cpp" //I might be dumb but not sure why I am getting an error without this.
+
+// TODO Add Functions:
+//  1. function to create .txt files with varying sizes of randomly populated arrays
+//   1a. do we put this as a command line argument to generate new data?
+//  2. function to record timings for each sorting function and write to a .csv file for plotting
+//   2a. need to add functionality to read multiple input files at a time so we don't have to run the program over and over
+//   2b. thinking for 1 and 2 we create an analysis class (analysis.cpp/analysis.h) that handles data creation/timing
+//  3. add to merge sort function
+//  4. add to quick sort function
+
 
 void print(std::vector<int> &vec){
     for(int i = 0; i < vec.size(); i++) {
         std::cout << vec[i] << " ";
     }
-    std::cout << std::endl;
+    std::cout << '\n';
 }
 
-int main() {
-    std::vector<int> vec = {7,67,68,84,94};
-    TreeSort T;
-<<<<<<< HEAD
-    std::cout << "Unsorted: ";
-=======
-    T.sort(vec);
-    insertionSort(vec);
->>>>>>> main
-    print(vec);
-    std::cout << std::endl;
+//3 args: filename, measure timing(0 or 1), sort type (0 for insertion, 1 for merge, 2 for quick, 3 for tree, 4 for auto)
+int main(int argc, char *argv[]) {
+    //args
+    std::ifstream ifs(argv[1]);
+    bool measureClock = std::stoi(argv[2]);
+    int sortType = std::stoi(argv[3]);
 
-    if(vec.size() >= 5){
-        T.sort(vec);
-        print(vec);
-        std::cout << "Sorted with Tree Sort\n";
-    } else {
-        insertionSort(vec);
-        print(vec);
-        std::cout << "Sorted with Insertion Sort\n";
+    //data
+    std::vector<int> inputData;
+
+    //parsing
+    std::string line;
+    std::getline(ifs, line);
+    std::stringstream ss(line);
+
+    int tmp;
+    while(ss >> tmp){
+        inputData.push_back(tmp);
     }
 
+    //create Sorting object with read in data and sorting type
+    Sorting sortObj(inputData, sortType);
+
+    std::cout<<"Unsorted array: ";
+    print(inputData);
+
+    //sort the data. I have the Sort function just taking in a bool but could move this to the constructor, w/e
+    sortObj.Sort(measureClock);
+
+    std::cout<<"Sorted array: ";
+    print(sortObj.Data);
 }
 

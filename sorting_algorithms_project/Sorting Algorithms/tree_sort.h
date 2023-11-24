@@ -33,6 +33,8 @@ public:
     TreeSort();
     ~TreeSort();
     void sort(std::vector<int>& vec);
+
+    friend class Sorting;
 };
 
 

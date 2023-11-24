@@ -5,4 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Sorting_Algorithms main.cpp
         tree_sort.h
-        tree_sort.cpp)
+        tree_sort.cpp
+        SORTING_H Sorting.cpp
+        SORTING_H Sorting.h
+)
