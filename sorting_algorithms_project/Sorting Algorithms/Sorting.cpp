@@ -36,7 +36,6 @@ void Sorting::pickSort(std::vector<int> &data) {
         _sortingType = INSERTION;
 }
 
-// TODO modify to write to .csv file here I think -ethen
 void Sorting::measureTiming(SortingType sortingType) {
     uint64_t val;
 
@@ -67,8 +66,9 @@ void Sorting::measureTiming(SortingType sortingType) {
     }
 
     float output = 1.0 * (c_end - c_start) / CLOCKS_PER_SEC;
+    ClockOutput = output;
     //will need to figure out how we want to output our timing values. Will probably need to write to file so we can plot
-    std::cout << std::fixed << std::setprecision(4) << output << " Output: " << val << std::endl;
+    std::cout << std::fixed << std::setprecision(4) << output << " | vector size: " << Data.size() << std::endl;
 }
 
 void Sorting::mergeem(int L, int M, int R, std::vector<int> &array1) {
