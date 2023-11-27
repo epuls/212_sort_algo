@@ -1,12 +1,6 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <random>
 
-#include "Sorting.h" //I might be dumb but not sure why I am getting an error without this.
+#include "Sorting.h"
 
-
-//TODO: implementation/application
 
 void print(std::vector<int> &vec){
     for(int i = 0; i < vec.size(); i++) {
@@ -30,7 +24,7 @@ void genData(int mode, std::string fname){
             sortVecIn.push_back(rNum);
         }
         Sorting tmpSortObj(sortVecIn, mode);
-        tmpSortObj.Sort(true);
+        tmpSortObj.Sort(true, false);
         myFile << tmpSortObj.ClockOutput << "\n";
         //print(tmpSortObj.Data);
     }
@@ -38,10 +32,32 @@ void genData(int mode, std::string fname){
     myFile.close();
 }
 
+//handles a couple of extra ways to run program. F deletes benchmark file and forces another,
+// B is an alternate (brute force) auto pick method.
+void handleRunArgs(char *argv[]){
+    std::string extraArg = argv[4];
+    if(extraArg == "GENDATA"){
+        //add command line for vector size?
+        genData(0, "insertion_sort_data.csv");
+        genData(1, "merge_sort_data.csv");
+        genData(2, "quick_sort_data.csv");
+        genData(3, "tree_sort_data.csv");
+    } else if (extraArg == "F"){
+        if(std::filesystem::exists("benchmark.txt")){
+            std::remove("benchmark.txt");
+        }
+    }
+}
 
-//3 args: filename, measure timing(0 or 1), sort type (0 for insertion, 1 for merge, 2 for quick, 3 for tree, 4 for auto)
+
+
+//3 args: filename, measure timing(0 or 1), sort type (0 for insertion, 1 for merge, 2 for quick, 3 for tree, 4 for auto, 5 for auto 2(brute force))
 int main(int argc, char *argv[]) {
-    //args
+    if(argc > 4){
+        handleRunArgs(argv);
+    }
+
+    //base args
     std::ifstream ifs(argv[1]);
     bool measureClock = std::stoi(argv[2]);
     int sortType = std::stoi(argv[3]);
@@ -66,21 +82,11 @@ int main(int argc, char *argv[]) {
     print(inputData);
 
     //sort the data. I have the Sort function just taking in a bool but could move this to the constructor, w/e
-    sortObj.Sort(measureClock);
+    sortObj.Sort(measureClock, true);
 
     std::cout<<"Sorted array: ";
     print(sortObj.Data);
 
-    //if you add GENDATA to the end of arguments, generate sort data for presentation
-    if(argc > 4){
-        std::string secretarg = argv[4];
-        if(secretarg == "GENDATA"){
-            //add command line for vector size?
-            genData(0, "insertion_sort_data.csv");
-            genData(1, "merge_sort_data.csv");
-            genData(2, "quick_sort_data.csv");
-            genData(3, "tree_sort_data.csv");
-        }
-    }
+
 }
 
