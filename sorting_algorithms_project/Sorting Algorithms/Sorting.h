@@ -17,6 +17,7 @@ public:
     Sorting(std::vector<int> sortData, int mode);
     ~Sorting();
     enum SortingType {INSERTION, MERGE, QUICK, TREE};
+    float ClockOutput;
 
     std::vector<int> Data;
 
