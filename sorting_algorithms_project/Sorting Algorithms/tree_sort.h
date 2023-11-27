@@ -1,7 +1,3 @@
-//
-// Created by asalm on 11/3/2023.
-//
-
 #ifndef TREE_SORT_TREE_SORT_H
 #define TREE_SORT_TREE_SORT_H
 

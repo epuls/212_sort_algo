@@ -1,5 +1,13 @@
 # ninja log v5
-697	852	7207220865242344	Tree_Sort.exe	263ccfa4a3b6f7a
-2	1079	7211144600326148	CMakeFiles/Sorting_Algorithms.dir/main.cpp.obj	dc91d032153515b3
-11	1090	7211144600491995	CMakeFiles/Sorting_Algorithms.dir/tree_sort.cpp.obj	be12b494f6166b7b
-1090	1492	7211144604517026	Sorting_Algorithms.exe	46b345f627cf763f
+1	93	7225868953099687	build.ninja	e2006e02cf212e15
+2	381	7225867797385168	CMakeFiles/212_sorting_take_2.dir/main.cpp.obj	4a47a951225ee040
+4	204	7225867523519008	CMakeFiles/212_sorting_take_2.dir/tree_sort.cpp.obj	25b0572cd2cd7c21
+2	272	7225867524199010	CMakeFiles/212_sorting_take_2.dir/Sorting.cpp.obj	8f6ba3e3f488fb1b
+4	270	7225869330309344	CMakeFiles/212_sorting_take_2.dir/Sorting.cpp.obj	8f6ba3e3f488fb1b
+1	397	7225869331569338	CMakeFiles/212_sorting_take_2.dir/main.cpp.obj	4a47a951225ee040
+4	271	7225869553266933	CMakeFiles/212_sorting_take_2.dir/Sorting.cpp.obj	8f6ba3e3f488fb1b
+2	386	7225869554416936	CMakeFiles/212_sorting_take_2.dir/main.cpp.obj	4a47a951225ee040
+4	269	7225869878966261	CMakeFiles/212_sorting_take_2.dir/Sorting.cpp.obj	8f6ba3e3f488fb1b
+2	395	7225869880226259	CMakeFiles/212_sorting_take_2.dir/main.cpp.obj	4a47a951225ee040
+2	360	7225870436580310	CMakeFiles/212_sorting_take_2.dir/main.cpp.obj	4a47a951225ee040
+360	422	7225870437180304	212_sorting_take_2.exe	3c2bb2cf8a33107a

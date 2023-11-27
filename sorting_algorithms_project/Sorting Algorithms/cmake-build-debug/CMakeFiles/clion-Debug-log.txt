@@ -1,13 +1,4 @@
-C:\Users\epuls\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\232.9921.42\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms" -B "C:\212_sort_algo\sorting_algorithms_project\Sorting Algorithms\cmake-build-debug"
--- Configuring done (0.1s)
-CMake Error at CMakeLists.txt:6 (add_executable):
-  Cannot find source file:
-
-    SORTING_H
-
-
-CMake Error at CMakeLists.txt:6 (add_executable):
-  No SOURCES given to target: Sorting_Algorithms
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+C:\Users\epuls\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\232.9921.42\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/epuls/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/232.9921.42/bin/ninja/win/x64/ninja.exe -G Ninja -S "C:\Users\epuls\CLionProjects\212 sorting take 2" -B "C:\Users\epuls\CLionProjects\212 sorting take 2\cmake-build-debug"
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/epuls/CLionProjects/212 sorting take 2/cmake-build-debug

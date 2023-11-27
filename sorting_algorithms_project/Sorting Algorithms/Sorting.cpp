@@ -1,6 +1,6 @@
 #include "Sorting.h"
 #include "tree_sort.h"
-#include "tree_sort.cpp"
+
 
 
 //constructors/destructors
@@ -20,7 +20,9 @@ Sorting::Sorting(std::vector<int> sortData, int mode) {
         _sortingType = static_cast<SortingType>(mode); //this casts the input arg to our enum
 }
 
-Sorting::~Sorting() = default;
+Sorting::~Sorting() {
+
+}
 
 //---------------------------------------------private functions-------------------------------------------------------
 //the auto sort function that picks sorting type by vector size
