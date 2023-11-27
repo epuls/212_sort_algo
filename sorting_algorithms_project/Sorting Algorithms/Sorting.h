@@ -1,5 +1,5 @@
-#ifndef SORTING_H
-#define SORTING_H
+#ifndef SORTING_SORTING_H
+#define SORTING_SORTING_H
 
 #include <iostream>
 #include <vector>
@@ -8,7 +8,6 @@
 #include <cstdint>
 #include <iomanip>
 
-#include "tree_sort.h"
 
 
 
@@ -41,4 +40,4 @@ private:
     static void mergesort(int L, int R, std::vector<int>& array1);
 };
 
-#endif //SORTING_H
+#endif //SORTING_SORTING_H

@@ -2,10 +2,8 @@
 #include <fstream>
 #include <sstream>
 #include <random>
-#include <iostream>
-#include <fstream>
 
-#include "Sorting.cpp" //I might be dumb but not sure why I am getting an error without this.
+#include "Sorting.h" //I might be dumb but not sure why I am getting an error without this.
 
 
 //TODO: implementation/application

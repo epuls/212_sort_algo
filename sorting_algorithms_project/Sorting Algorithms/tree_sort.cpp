@@ -1,7 +1,3 @@
-//
-// Created by asalm on 11/3/2023.
-//
-
 #include "tree_sort.h"
 
 
