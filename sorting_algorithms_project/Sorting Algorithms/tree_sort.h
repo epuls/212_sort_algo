@@ -1,7 +1,3 @@
-//
-// Created by asalm on 11/3/2023.
-//
-
 #ifndef TREE_SORT_TREE_SORT_H
 #define TREE_SORT_TREE_SORT_H
 
@@ -33,6 +29,8 @@ public:
     TreeSort();
     ~TreeSort();
     void sort(std::vector<int>& vec);
+
+    friend class Sorting;
 };
 
 

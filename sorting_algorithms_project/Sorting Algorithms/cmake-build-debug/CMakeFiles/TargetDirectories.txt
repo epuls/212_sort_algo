@@ -1,0 +1,3 @@
+C:/Users/epuls/CLionProjects/212 sorting take 2/cmake-build-debug/CMakeFiles/212_sorting_take_2.dir
+C:/Users/epuls/CLionProjects/212 sorting take 2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/epuls/CLionProjects/212 sorting take 2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
