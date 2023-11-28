@@ -9,52 +9,83 @@ void print(std::vector<int> &vec){
     std::cout << '\n';
 }
 
-//generates .csv file measuring clock speed of sorts on randomly populated arrays
-//called at end of main if extra argument GENDATA added to end
-void genData(int mode, std::string fname){
+//generates .csv file measuring clock speed of sorts on randomly populated arrays. Will name the file based on
+//the vectors that were created/sorted
+void genData(int sortMode, std::string fname, int makeVecMode, int arrayCount){
     std::ofstream myFile;
-    std::string modeStr = std::to_string(mode);
-    myFile.open(fname);
+    std::string fname_verbose = fname;
 
-    //where you set max array size in data files
-    for(int i = 1; i < 5000; i++){
+    switch(makeVecMode) {
+        default:
+            break;
+        case (0):
+            fname_verbose += "_random_vec.csv";
+            break;
+        case (1):
+            fname_verbose += "_reverse_sorted_vec.csv";
+            break;
+        case (2):
+            fname_verbose += "_partially_sorted_vec.csv";
+            break;
+        case (3):
+            fname_verbose += "_presorted_vec.csv";
+            break;
+    }
+
+    myFile.open(fname_verbose);
+
+    std::vector<int> tmpVecTest;
+    Sorting genObj(tmpVecTest, 0, 0);
+    for(int i = 1; i < arrayCount; i++){
         std::vector<int> sortVecIn = {};
-        for(int j = 1; j <= i; j++){
-            int rNum = rand() % 1000;
-            sortVecIn.push_back(rNum);
+        switch(makeVecMode){
+            case (0):
+                sortVecIn = genObj.MakeRandomUnsortedVec(i);
+                break;
+            case (1):
+                sortVecIn = genObj.MakeReverseSortedVec(i);
+                break;
+            case (2):
+                sortVecIn = genObj.MakePartiallySortedVec(i);
+                break;
+            case (3):
+                sortVecIn = genObj.MakeSortedVec(i);
+                break;
         }
-        Sorting tmpSortObj(sortVecIn, mode);
+        Sorting tmpSortObj(sortVecIn, sortMode, 0);
         tmpSortObj.Sort(true, false);
         myFile << tmpSortObj.ClockOutput << "\n";
-        //print(tmpSortObj.Data);
     }
 
     myFile.close();
 }
 
 //handles a couple of extra ways to run program. F deletes benchmark file and forces another,
-// B is an alternate (brute force) auto pick method.
-void handleRunArgs(char *argv[]){
+void handleRunArgs(int argc, char *argv[], int &vecType){
     std::string extraArg = argv[4];
+    if(argc > 5){
+        vecType = std::stoi(argv[5]);
+    }
     if(extraArg == "GENDATA"){
-        //add command line for vector size?
-        genData(0, "insertion_sort_data.csv");
-        genData(1, "merge_sort_data.csv");
-        genData(2, "quick_sort_data.csv");
-        genData(3, "tree_sort_data.csv");
+        genData(0, "insertion_sort", vecType, Sorting::DATA_SIZE);
+        genData(1, "merge_sort", vecType, Sorting::DATA_SIZE);
+        genData(2, "quick_sort", vecType, Sorting::DATA_SIZE);
+        genData(3, "tree_sort", vecType, Sorting::DATA_SIZE);
     } else if (extraArg == "F"){
         if(std::filesystem::exists("benchmark.txt")){
             std::remove("benchmark.txt");
         }
+    } else {
+        vecType = std::stoi(extraArg);
     }
+
 }
-
-
 
 //3 args: filename, measure timing(0 or 1), sort type (0 for insertion, 1 for merge, 2 for quick, 3 for tree, 4 for auto, 5 for auto 2(brute force))
 int main(int argc, char *argv[]) {
+    int autoGenVecType = 0;
     if(argc > 4){
-        handleRunArgs(argv);
+        handleRunArgs(argc, argv, autoGenVecType);
     }
 
     //base args
@@ -76,7 +107,7 @@ int main(int argc, char *argv[]) {
     }
 
     //create Sorting object with read in data and sorting type
-    Sorting sortObj(inputData, sortType);
+    Sorting sortObj(inputData, sortType, autoGenVecType);
 
     std::cout<<"Unsorted array: ";
     print(inputData);

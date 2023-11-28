@@ -8,7 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <random>
+#include <random> //used for randomly populating vectors
 
 //runtime clocking
 #include <ctime>
@@ -18,12 +18,9 @@
 #include <algorithm> //used for max_element during benchmark
 #include <filesystem> //used for checking if benchmark was completed
 
-
-
-
 class Sorting {
 public:
-    Sorting(std::vector<int> sortData, int mode);
+    Sorting(std::vector<int> sortData, int mode, int benchmarkVecType);
     ~Sorting();
     enum SortingType {INSERTION, MERGE, QUICK, TREE};
     float ClockOutput;
@@ -34,22 +31,33 @@ public:
     void Sort(bool measureClock, bool print);
 
     //static and can be directly called if desired
-    static void InsertionSort(std::vector<int>& data);
-    static void MergeSort(std::vector<int>& data);
-    static void QuickSort(std::vector<int>& data);
-    static void TreeSort(std::vector<int>& data);
+    void InsertionSort(std::vector<int>& data);
+    void MergeSort(std::vector<int>& data);
+    void QuickSort(std::vector<int>& data);
+    void TreeSort(std::vector<int>& data);
+
+    const static int INITIAL_BENCHMARK_MAX = 2000; //how large the autosort benchmark will run to
+    const static int DATA_SIZE = 5000; //size of generated data
 
     std::string GetSortName(int mode);
 
+    //made public so we can access from main
+    std::vector<int> MakeRandomUnsortedVec(int size);
+    std::vector<int> MakeReverseSortedVec(int size);
+    std::vector<int> MakePartiallySortedVec(int size);
+    std::vector<int> MakeSortedVec(int size);
+    std::vector<std::vector<int>> MakeBenchmarkVecs(int count, int mode);
+
 private:
     std::vector<std::map<int, float>> benchmarkMaps;
+    int _benchmarkVecCreationMode = 0;
 
     void pickSort(std::vector<int>& data, int method = 1); //define how to pick sort, private helper called from AutoSort
     void measureTiming(SortingType sortingType, bool print); //call sorts from this func to measure timing
-    std::vector<int> makeRandomUnsortedVec(int size);
-    std::vector<std::vector<int>> unsortedVec(int count);
-    void benchmark(int vecSize, int algCount = 4, int mode = 0);
-    void tryLoad(int mode = 0);
+
+
+    void benchmark(int vecSize, int autoMode, int algCount=4);
+    void tryLoad();
 
     SortingType _sortingType;
 
