@@ -2,8 +2,10 @@
 #include "tree_sort.h"
 
 //constructors/destructors
-Sorting::Sorting(std::vector<int> sortData, int mode) {
+Sorting::Sorting(std::vector<int> sortData, int mode, int benchmarkVecType) {
     Data = sortData;
+    _benchmarkVecCreationMode = benchmarkVecType;
+    ClockOutput = 0;
 
     //throw error if mode argument is out of bounds
     if(mode < 0 | mode > 5){
@@ -25,26 +27,7 @@ Sorting::~Sorting() {
 }
 
 //---------------------------------------------private functions-------------------------------------------------------
-std::vector<int> Sorting::makeRandomUnsortedVec(int size) {
-    std::vector<int> randomVec = {};
-    for(int j = 1; j <= size; j++){
-        int rNum = rand() % 1000;
-        randomVec.push_back(rNum);
-    }
-    return randomVec;
-}
-
-std::vector<std::vector<int>> Sorting::unsortedVec(int count){
-    std::vector<std::vector<int>> outputVec = {};
-    for(int i = 1; i <= count; i++){
-        std::vector<int> tmp = makeRandomUnsortedVec(i);
-        outputVec.push_back(tmp);
-    }
-    return outputVec;
-}
-
-void Sorting::benchmark(int vecSize, int algCount, int mode){
-    //use above helper functions to create random arrays, sort, and record times.
+void Sorting::benchmark(int vecSize, int autoMode, int algCount){
     std::vector<std::vector<float>> sortTime; //holds all recorded times
     std::vector<std::vector<int>> deltaIndices = {}; //where each increase in clock timing happens
     std::vector<std::vector<float>> deltaValues = {}; //clocking timing at each increase
@@ -53,12 +36,12 @@ void Sorting::benchmark(int vecSize, int algCount, int mode){
     std::vector<std::vector<float>> ratesOfChange = {};
 
     //benchmark test itself, runs slowly on large amounts of vectors. Sorting vecSize * 4 total vectors...
-    for(int i = 0; i < algCount; i++){
-        std::vector<std::vector<int>> benchmarkVecs = unsortedVec(vecSize);
+    for(int i = 0; i < 4; i++){
+        std::vector<std::vector<int>> benchmarkVecs = MakeBenchmarkVecs(vecSize, _benchmarkVecCreationMode);
         std::vector<float> tmpTimes;
         std::map<int,float> tmpMap;
         for(int j = 0; j < benchmarkVecs.size(); j++){
-            Sorting tmpSortObj(benchmarkVecs[j], i);
+            Sorting tmpSortObj(benchmarkVecs[j], i, _benchmarkVecCreationMode);
             tmpSortObj.Sort(true, false);
             float clockTime = tmpSortObj.ClockOutput;
             tmpTimes.push_back(clockTime);
@@ -68,12 +51,12 @@ void Sorting::benchmark(int vecSize, int algCount, int mode){
         benchmarkMaps.push_back(tmpMap);
     }
 
-    if(mode == 0)
+    //if brute forcing, don't bother running whole benchmark
+    if(autoMode == 0)
         return;
 
-
-    //analysis -- record points in the saved times that clock timing increases
-    for(int i = 0; i < algCount; i++){
+    //record points in the saved times that clock timing increases: Used in autosort(4)
+    for(int i = 0; i < 4; i++){
         std::vector<int> tmpDeltaIdx = {};
         std::vector<float> tmpDeltaVal = {};
         int tmpIdx = 0;
@@ -88,13 +71,10 @@ void Sorting::benchmark(int vecSize, int algCount, int mode){
         deltaValues.push_back(tmpDeltaVal);
     }
 
-
-
-    //analysis -- where max times and averages are recorded/rates of change
-    for(int i = 0; i < algCount; i++){
+    //calc max sort times and averages are recorded/rates of change
+    for(int i = 0; i < 4; i++){
         float curMax = *std::max_element(sortTime[i].begin(), sortTime[i].end());
         maxTimes.push_back(curMax);
-        //std::cout<<"max time: "<<std::to_string(curMax) + "\n";
         std::vector<float> tmpRates;
 
         float tmpRate;
@@ -113,30 +93,12 @@ void Sorting::benchmark(int vecSize, int algCount, int mode){
         float tmpAverage = tmpSum / (float) sortTime[i].size();
         averageTimes.push_back(tmpAverage);
         ratesOfChange.push_back(tmpRates);
-        //std::cout<<std::to_string(tmpAverage)<<"\n";
     }
-
-
-
-
-    std::vector<std::pair<int,int>> calculatedRanges = {}; //largest ranges of constant sort time
-    for(int j = 0; j < 8; j++){
-        std::pair<int, int> tmpRange(0,0);
-        for(int i = 0; i < algCount; i++){
-            if(deltaIndices[i][j])
-                if(deltaIndices[i][j] > tmpRange.second){
-                    tmpRange.first = i;
-                    tmpRange.second = deltaIndices[i][j];
-                }
-        }
-        calculatedRanges.push_back(tmpRange);
-    }
-
 
     //get algo with min rate of change
     int selIdx = 0;
     int curMin = 100;
-    for(int i = 0; i < algCount; i++){
+    for(int i = 0; i < 4; i++){
         if(deltaIndices[i].size() < curMin){
             curMin = deltaIndices[i].size();
             selIdx = i;
@@ -149,28 +111,23 @@ void Sorting::benchmark(int vecSize, int algCount, int mode){
     saveData << selIdx;
     saveData.close();
 
-
     std::cout<<"Benchmark successful, picked algorithm: "<<GetSortName(selIdx)<< "\n";
-
 }
 
-void Sorting::tryLoad(int mode){
-    if(mode == 0)
-        benchmark(2000);
-    else
-        if(std::filesystem::exists("benchmark.txt")){
-            std::ifstream saveData;
-            saveData.open("benchmark.txt");
-            std::string line;
-            std::getline(saveData, line);
-            int loadedMode = std::stoi(line);
-            saveData.close();
-            _sortingType = static_cast<SortingType>(loadedMode);
-            std::cout<<"Loaded previous benchmark, picked algorithm: "<<GetSortName(loadedMode)<< "\n";
-        } else
-            benchmark(2000, 4,1);
-}
 
+void Sorting::tryLoad(){
+    if(std::filesystem::exists("benchmark.txt")){
+        std::ifstream saveData;
+        saveData.open("benchmark.txt");
+        std::string line;
+        std::getline(saveData, line);
+        int loadedMode = std::stoi(line);
+        saveData.close();
+        _sortingType = static_cast<SortingType>(loadedMode);
+        std::cout<<"Loaded previous benchmark, picked algorithm: "<<GetSortName(loadedMode)<< "\n";
+    } else
+        benchmark(INITIAL_BENCHMARK_MAX, 4,1);
+}
 
 //the auto sort function that picks sorting type by vector size
 void Sorting::pickSort(std::vector<int> &data, int method) {
@@ -179,8 +136,9 @@ void Sorting::pickSort(std::vector<int> &data, int method) {
     std::vector<float> times;
 
     if(method == 0){
-        tryLoad();
         //brute force method
+        benchmark(INITIAL_BENCHMARK_MAX, 0);
+
         for(int i = 0; i < 4; i++){
             times.push_back(benchmarkMaps[i].find(size)->second);
         }
@@ -196,15 +154,13 @@ void Sorting::pickSort(std::vector<int> &data, int method) {
         std::cout<<"For size: "<<size<<" most efficient sorting method is: "<< _sortingType<<"\n";
         Sort(false, true);
     } else {
-        tryLoad(1);
+        tryLoad();
     }
 
 
 }
 
 void Sorting::measureTiming(SortingType sortingType, bool print) {
-    uint64_t val;
-
     unsigned long c_start, c_end;
 
     //wasn't sure if throwing c_start before the switch and c_end after would add a tiny bit of extra time so running it in each case
@@ -324,6 +280,71 @@ void Sorting::quickSort(std::vector<int> &arr, int start, int end) {
 }
 
 //---------------------------------------------public functions--------------------------------------------------------
+std::vector<int> Sorting::MakeRandomUnsortedVec(int size) {
+    std::vector<int> randomVec = {};
+    for(int j = 1; j <= size; j++){
+        int rNum = rand() % 1000;
+        randomVec.push_back(rNum);
+    }
+    return randomVec;
+}
+
+std::vector<int> Sorting::MakeReverseSortedVec(int size) {
+    std::vector<int> outputVec;
+    for(int j = size; j > 0; j--){
+        outputVec.push_back(j);
+    }
+    return outputVec;
+}
+
+std::vector<int> Sorting::MakePartiallySortedVec(int size) {
+    std::vector<int> outputVec;
+    for(int j = 1; j <= size; j++){
+        if(j < (size/2)){
+            outputVec.push_back(j);
+        } else {
+            int rNum = rand() % j + (size/2);
+            outputVec.push_back(rNum);
+        }
+    }
+    return outputVec;
+}
+
+std::vector<int> Sorting::MakeSortedVec(int size) {
+    std::vector<int> outputVec;
+    for(int j = 1; j <= size; j++){
+        outputVec.push_back(j);
+    }
+    return outputVec;
+}
+
+std::vector<std::vector<int>> Sorting::MakeBenchmarkVecs(int count, int mode){
+    std::vector<std::vector<int>> outputVec = {};
+    for(int i = 1; i <= count; i++){
+        std::vector<int> tmp;
+        switch(mode) {
+            default:
+                std::cerr << "Benchmark type out of range, pick 0-3.";
+                std::exit(-1);
+                break;
+            case (0):
+                tmp = MakeRandomUnsortedVec(i);
+                break;
+            case (1):
+                tmp = MakeReverseSortedVec(i);
+                break;
+            case (2):
+                tmp = MakePartiallySortedVec(i);
+                break;
+            case (3):
+                tmp = MakeSortedVec(i);
+                break;
+        }
+        outputVec.push_back(tmp);
+    }
+    return outputVec;
+}
+
 void Sorting::InsertionSort(std::vector<int>& data)
 {
     int i, key, j;
@@ -349,7 +370,6 @@ void Sorting::QuickSort(std::vector<int> &data) {
 }
 
 void Sorting::TreeSort(std::vector<int>& data){
-    //need to use class keyword here due to scoping...TreeSort is the name of a public func and a class.
     class TreeSort T;
     T.sort(data);
 }
