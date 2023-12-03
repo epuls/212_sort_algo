@@ -15,6 +15,8 @@
 #include <cstdint>
 #include <iomanip>
 
+#include <chrono> //used for calculating benchmark runtime
+
 #include <algorithm> //used for max_element during benchmark
 #include <filesystem> //used for checking if benchmark was completed
 
@@ -30,7 +32,7 @@ public:
     //main sort function to handle various options
     void Sort(bool measureClock, bool print);
 
-    //static and can be directly called if desired
+    //core sorting algorithm drivers.
     void InsertionSort(std::vector<int>& data);
     void MergeSort(std::vector<int>& data);
     void QuickSort(std::vector<int>& data);
@@ -38,6 +40,8 @@ public:
 
     const static int INITIAL_BENCHMARK_MAX = 2000; //how large the autosort benchmark will run to
     const static int DATA_SIZE = 5000; //size of generated data
+    int benchmark_override;
+    int data_override;
 
     std::string GetSortName(int mode);
 
@@ -55,9 +59,9 @@ private:
     void pickSort(std::vector<int>& data, int method = 1); //define how to pick sort, private helper called from AutoSort
     void measureTiming(SortingType sortingType, bool print); //call sorts from this func to measure timing
 
-
-    void benchmark(int vecSize, int autoMode, int algCount=4);
-    void tryLoad();
+    void benchmark(int vecSize, int autoMode);
+    void tryLoadBenchmark();
+    std::pair<int, int> tryLoadSettings();
 
     SortingType _sortingType;
 

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/epuls/CLionProjects/212 sorting take 2
+# Install script for directory: C:/212_sort_algo/212_sort_algo/sorting_algorithms_project/Sorting Algorithms
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/epuls/CLionProjects/212 sorting take 2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/212_sort_algo/212_sort_algo/sorting_algorithms_project/Sorting Algorithms/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
