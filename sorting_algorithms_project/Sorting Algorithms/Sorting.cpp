@@ -7,6 +7,11 @@ Sorting::Sorting(std::vector<int> sortData, int mode, int benchmarkVecType) {
     _benchmarkVecCreationMode = benchmarkVecType;
     ClockOutput = 0;
 
+    //load settings.txt for two overrides.
+    std::pair<int,int> settingsOverride = tryLoadSettings();
+    benchmark_override = settingsOverride.first;
+    data_override = settingsOverride.second;
+
     //throw error if mode argument is out of bounds
     if(mode < 0 | mode > 5){
         std::cerr << "undefined sorting mode";
@@ -27,13 +32,16 @@ Sorting::~Sorting() {
 }
 
 //---------------------------------------------private functions-------------------------------------------------------
-void Sorting::benchmark(int vecSize, int autoMode, int algCount){
+void Sorting::benchmark(int vecSize, int autoMode){
+    if(benchmark_override != INITIAL_BENCHMARK_MAX)
+        std::cout<<"Loaded override settings for initial benchmark size. New value: "<<benchmark_override<<"\n";
+
+
+    std::cout<<"Running incremental benchmark on vectors containing up to: "<<vecSize<<" elements.\n";
+    std::chrono::steady_clock::time_point benchBegin = std::chrono::steady_clock::now();
     std::vector<std::vector<float>> sortTime; //holds all recorded times
     std::vector<std::vector<int>> deltaIndices = {}; //where each increase in clock timing happens
     std::vector<std::vector<float>> deltaValues = {}; //clocking timing at each increase
-    std::vector<float> maxTimes = {};
-    std::vector<float> averageTimes = {};
-    std::vector<std::vector<float>> ratesOfChange = {};
 
     //benchmark test itself, runs slowly on large amounts of vectors. Sorting vecSize * 4 total vectors...
     for(int i = 0; i < 4; i++){
@@ -71,30 +79,6 @@ void Sorting::benchmark(int vecSize, int autoMode, int algCount){
         deltaValues.push_back(tmpDeltaVal);
     }
 
-    //calc max sort times and averages are recorded/rates of change
-    for(int i = 0; i < 4; i++){
-        float curMax = *std::max_element(sortTime[i].begin(), sortTime[i].end());
-        maxTimes.push_back(curMax);
-        std::vector<float> tmpRates;
-
-        float tmpRate;
-        float tmpSum = 0;
-
-        for(int j = 0; j < sortTime[i].size(); j++){
-            tmpSum += sortTime[i][j];
-
-            if(i != 0 && j != 0 && sortTime[i][j] != 0) //avoid dividing by zero...
-                tmpRate = sortTime[i][j] / (float) i;
-            else
-                tmpRate = 0;
-
-            tmpRates.push_back(tmpRate);
-        }
-        float tmpAverage = tmpSum / (float) sortTime[i].size();
-        averageTimes.push_back(tmpAverage);
-        ratesOfChange.push_back(tmpRates);
-    }
-
     //get algo with min rate of change
     int selIdx = 0;
     int curMin = 100;
@@ -111,11 +95,34 @@ void Sorting::benchmark(int vecSize, int autoMode, int algCount){
     saveData << selIdx;
     saveData.close();
 
-    std::cout<<"Benchmark successful, picked algorithm: "<<GetSortName(selIdx)<< "\n";
+    std::chrono::steady_clock::time_point benchEnd = std::chrono::steady_clock::now();
+    std::cout<<"Benchmark successful, duration: "<<std::chrono::duration_cast<std::chrono::seconds>(benchEnd - benchBegin).count()<<" seconds.\nSelected algorithm: "<<GetSortName(selIdx)<< "\n";
+}
+
+std::pair<int, int> Sorting::tryLoadSettings() {
+    std::pair<int,int> outputVal(INITIAL_BENCHMARK_MAX, DATA_SIZE);
+
+    if(std::filesystem::exists("settings.txt")){
+        std::ifstream settingsFile("settings.txt");
+        std::string line;
+        while(std::getline(settingsFile, line)){
+            if (line.substr(0, 22) == "INITIAL_BENCHMARK_MAX="){
+                outputVal.first = std::stoi(line.substr(22));
+            } else if (line.substr(0, 10) == "DATA_SIZE="){
+                outputVal.second = std::stoi(line.substr(10));
+            }
+        }
+    } else {
+        std::ofstream settingsData;
+        settingsData.open("settings.txt");
+        settingsData << "INITIAL_BENCHMARK_MAX=2000\n";
+        settingsData << "DATA_SIZE=5000";
+    }
+    return outputVal;
 }
 
 
-void Sorting::tryLoad(){
+void Sorting::tryLoadBenchmark(){
     if(std::filesystem::exists("benchmark.txt")){
         std::ifstream saveData;
         saveData.open("benchmark.txt");
@@ -125,8 +132,13 @@ void Sorting::tryLoad(){
         saveData.close();
         _sortingType = static_cast<SortingType>(loadedMode);
         std::cout<<"Loaded previous benchmark, picked algorithm: "<<GetSortName(loadedMode)<< "\n";
-    } else
-        benchmark(INITIAL_BENCHMARK_MAX, 4,1);
+    } else {
+        if(benchmark_override == INITIAL_BENCHMARK_MAX)
+            benchmark(INITIAL_BENCHMARK_MAX, 4);
+        else
+            benchmark(benchmark_override, 4);
+    }
+
 }
 
 //the auto sort function that picks sorting type by vector size
@@ -137,7 +149,10 @@ void Sorting::pickSort(std::vector<int> &data, int method) {
 
     if(method == 0){
         //brute force method
-        benchmark(INITIAL_BENCHMARK_MAX, 0);
+        if(benchmark_override == INITIAL_BENCHMARK_MAX)
+            benchmark(INITIAL_BENCHMARK_MAX, 0);
+        else
+            benchmark(benchmark_override, 0);
 
         for(int i = 0; i < 4; i++){
             times.push_back(benchmarkMaps[i].find(size)->second);
@@ -154,7 +169,7 @@ void Sorting::pickSort(std::vector<int> &data, int method) {
         std::cout<<"For size: "<<size<<" most efficient sorting method is: "<< _sortingType<<"\n";
         Sort(false, true);
     } else {
-        tryLoad();
+        tryLoadBenchmark();
     }
 
 
@@ -418,3 +433,5 @@ std::string Sorting::GetSortName(int mode) {
     }
     return returnString;
 }
+
+
